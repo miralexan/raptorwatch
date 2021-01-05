@@ -1,0 +1,24 @@
+plugins {
+    id 'io.ratpack.ratpack-groovy' version '1.8.0'
+    id 'idea'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'io.ratpack:ratpack-groovy:1.8.0'
+    // Default SLF4J binding.  Note that this is a blocking implementation.
+    // See here for a non blocking appender http://logging.apache.org/log4j/2.x/manual/async.html
+    runtimeOnly 'org.slf4j:slf4j-simple:1.7.30'
+
+    testImplementation "org.spockframework:spock-core:2.0-M4-groovy-2.5"
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}

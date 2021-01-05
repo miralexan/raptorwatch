@@ -1,0 +1,10 @@
+.gitattributes text
+.gitignore     text
+*.gradle       text
+gradlew        text
+*.bat          text
+*.groovy       text
+*.gtpl         text
+*.xml          text
+
+*.jar          binary

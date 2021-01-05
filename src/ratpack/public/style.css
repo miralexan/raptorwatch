@@ -1,0 +1,37 @@
+.container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header {
+  grid-column: span 3;
+  grid-row: 1;
+  text-align: center;
+}
+
+.prefix {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+  align-self: end;
+}
+
+.count {
+  grid-column: span 3;
+  grid-row: 3;
+  align-self: center;
+  text-align: center;
+}
+
+.suffix {
+  grid-column: 2;
+  grid-row: 4;
+  justify-self: center;
+  align-self: start;
+}
+
+.footer {
+  grid-column: span 3;
+  grid-row: 5;
+}

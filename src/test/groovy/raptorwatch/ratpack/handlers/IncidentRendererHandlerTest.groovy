@@ -10,7 +10,7 @@ import spock.lang.Specification
 class IncidentRendererHandlerTest extends Specification {
     def 'the handler renders the incident count'() {
         given:
-        def record = new IncidentRecord(incidentCount: a)
+        def record = new IncidentRecord(a)
         when:
         def result = handle(new IncidentRendererHandler()) {
             registry {

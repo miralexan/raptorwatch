@@ -1,37 +1,48 @@
-.container {
+.root {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .header {
-  grid-column: span 3;
   grid-row: 1;
   text-align: center;
 }
 
+.content {
+  grid-row: 2
+}
+
+.footer {
+  grid-row: 5;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .prefix {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 1;
   justify-self: center;
   align-self: end;
 }
 
 .count {
   grid-column: span 3;
-  grid-row: 3;
+  grid-row: 2;
   align-self: center;
   text-align: center;
 }
 
 .suffix {
   grid-column: 2;
-  grid-row: 4;
+  grid-row: 3;
   justify-self: center;
   align-self: start;
 }
 
-.footer {
-  grid-column: span 3;
-  grid-row: 5;
+.suffix input {
+  width: 100%;
 }

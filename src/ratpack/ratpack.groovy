@@ -1,11 +1,15 @@
+import static ratpack.groovy.Groovy.groovyMarkupTemplate
 import static ratpack.groovy.Groovy.ratpack
 
 import raptorwatch.IncidentRecord
-import raptorwatch.ratpack.handlers.IncidentRendererHandler
-import raptorwatch.ratpack.handlers.IncidentReportHandler
+import raptorwatch.ratpack.handlers.IncidentHandler
 import ratpack.groovy.template.MarkupTemplateModule
 
 ratpack {
+    serverConfig {
+        development true
+    }
+
     bindings {
         module MarkupTemplateModule
     }
@@ -14,16 +18,13 @@ ratpack {
         register {
             add new IncidentRecord()
         }
-        get {
-            byContent {
-                html {
-                    insert new IncidentRendererHandler()
-                }
-            }
+
+        path('incidents') {
+            insert new IncidentHandler()
         }
 
-        post('report') {
-            insert new IncidentReportHandler()
+        get {
+            render(groovyMarkupTemplate("index.gtpl"))
         }
 
         files {

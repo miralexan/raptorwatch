@@ -7,7 +7,7 @@ import ratpack.groovy.template.MarkupTemplate
 import ratpack.http.Status
 import spock.lang.Specification
 
-class IncidentHandlerTest extends Specification {
+class IncidentHandlerSpecification extends Specification {
 
     def 'the handler renders the incident count'() {
         given:
